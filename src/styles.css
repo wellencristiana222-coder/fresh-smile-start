@@ -5,20 +5,21 @@
 @custom-variant dark (&:is(.dark *));
 
 /*
- * Design system — Clínica Odontológica Sorriso Vivo
- * Identidade: verde-água clínico + areia quente, tipografia Outfit/DM Sans.
+ * Design system — Sorriso Vivo Odontologia
+ * Direção: "Neon Mint" — fundo noturno profundo, menta luminosa, layout bento.
+ * Tipografia: Syne (display) + Plus Jakarta Sans (texto).
  */
 
 @theme inline {
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 8px);
+  --radius-md: calc(var(--radius) - 4px);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-  --radius-2xl: calc(var(--radius) + 8px);
-  --radius-3xl: calc(var(--radius) + 12px);
-  --radius-4xl: calc(var(--radius) + 16px);
-  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
-  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --radius-xl: calc(var(--radius) + 6px);
+  --radius-2xl: calc(var(--radius) + 12px);
+  --radius-3xl: calc(var(--radius) + 20px);
+  --radius-4xl: calc(var(--radius) + 32px);
+  --font-display: "Syne", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -54,74 +55,75 @@
 }
 
 :root {
-  --radius: 1rem;
-  --background: oklch(0.99 0.008 160);
-  --foreground: oklch(0.24 0.035 200);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.24 0.035 200);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.24 0.035 200);
-  --primary: oklch(0.58 0.105 191);
-  --primary-foreground: oklch(0.99 0.01 180);
-  --primary-soft: oklch(0.93 0.045 185);
-  --secondary: oklch(0.95 0.028 185);
-  --secondary-foreground: oklch(0.32 0.06 195);
-  --muted: oklch(0.96 0.014 180);
-  --muted-foreground: oklch(0.52 0.028 200);
-  --accent: oklch(0.86 0.09 82);
-  --accent-foreground: oklch(0.28 0.06 60);
-  --sand: oklch(0.96 0.026 80);
-  --whatsapp: oklch(0.68 0.16 148);
-  --whatsapp-foreground: oklch(0.99 0.01 150);
-  --destructive: oklch(0.577 0.245 27.325);
-  --destructive-foreground: oklch(0.99 0.01 180);
-  --border: oklch(0.9 0.02 185);
-  --input: oklch(0.9 0.02 185);
-  --ring: oklch(0.58 0.105 191);
-  --sidebar: oklch(0.98 0.012 180);
-  --sidebar-foreground: oklch(0.24 0.035 200);
-  --sidebar-primary: oklch(0.58 0.105 191);
-  --sidebar-primary-foreground: oklch(0.99 0.01 180);
-  --sidebar-accent: oklch(0.95 0.028 185);
-  --sidebar-accent-foreground: oklch(0.32 0.06 195);
-  --sidebar-border: oklch(0.9 0.02 185);
-  --sidebar-ring: oklch(0.58 0.105 191);
+  --radius: 1.25rem;
+
+  /* #0d1b2a */
+  --background: oklch(0.21 0.035 250);
+  --foreground: oklch(0.97 0.015 165);
+  --card: oklch(0.25 0.036 245);
+  --card-foreground: oklch(0.97 0.015 165);
+  --popover: oklch(0.25 0.036 245);
+  --popover-foreground: oklch(0.97 0.015 165);
+
+  /* #2dd4a8 */
+  --primary: oklch(0.79 0.146 168);
+  --primary-foreground: oklch(0.19 0.04 250);
+  --primary-soft: oklch(0.33 0.06 175);
+
+  /* #1b4332 */
+  --secondary: oklch(0.32 0.055 158);
+  --secondary-foreground: oklch(0.95 0.03 165);
+
+  --muted: oklch(0.28 0.03 245);
+  --muted-foreground: oklch(0.75 0.026 190);
+
+  /* #73ffb8 */
+  --accent: oklch(0.9 0.165 158);
+  --accent-foreground: oklch(0.2 0.05 250);
+
+  --sand: oklch(0.3 0.04 165);
+  --whatsapp: oklch(0.79 0.146 168);
+  --whatsapp-foreground: oklch(0.19 0.04 250);
+  --destructive: oklch(0.62 0.23 25);
+  --destructive-foreground: oklch(0.98 0.01 165);
+  --border: oklch(0.98 0.02 165 / 12%);
+  --input: oklch(0.98 0.02 165 / 16%);
+  --ring: oklch(0.79 0.146 168);
+  --sidebar: oklch(0.23 0.035 248);
+  --sidebar-foreground: oklch(0.97 0.015 165);
+  --sidebar-primary: oklch(0.79 0.146 168);
+  --sidebar-primary-foreground: oklch(0.19 0.04 250);
+  --sidebar-accent: oklch(0.32 0.055 158);
+  --sidebar-accent-foreground: oklch(0.95 0.03 165);
+  --sidebar-border: oklch(0.98 0.02 165 / 12%);
+  --sidebar-ring: oklch(0.79 0.146 168);
 
   --gradient-hero: linear-gradient(
     135deg,
-    oklch(0.58 0.105 191) 0%,
-    oklch(0.68 0.09 178) 55%,
-    oklch(0.8 0.075 165) 100%
+    oklch(0.32 0.055 158) 0%,
+    oklch(0.62 0.13 170) 55%,
+    oklch(0.9 0.165 158) 100%
   );
-  --gradient-soft: linear-gradient(
-    180deg,
-    oklch(0.99 0.008 160) 0%,
-    oklch(0.96 0.026 175) 100%
-  );
-  --shadow-card: 0 18px 40px -24px oklch(0.4 0.06 195 / 0.45);
-  --shadow-float: 0 22px 45px -18px oklch(0.4 0.06 195 / 0.5);
+  --gradient-soft: radial-gradient(
+      120% 90% at 12% 0%,
+      oklch(0.79 0.146 168 / 0.22) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      100% 80% at 95% 10%,
+      oklch(0.9 0.165 158 / 0.14) 0%,
+      transparent 55%
+    ),
+    linear-gradient(180deg, oklch(0.21 0.035 250) 0%, oklch(0.24 0.04 245) 100%);
+  --shadow-card: 0 20px 45px -28px oklch(0 0 0 / 0.85);
+  --shadow-float: 0 0 0 1px oklch(0.79 0.146 168 / 0.25),
+    0 24px 60px -20px oklch(0.79 0.146 168 / 0.35);
+  --glow-mint: 0 0 40px oklch(0.79 0.146 168 / 0.45);
 }
 
 .dark {
-  --background: oklch(0.19 0.028 205);
-  --foreground: oklch(0.96 0.012 180);
-  --card: oklch(0.24 0.032 205);
-  --card-foreground: oklch(0.96 0.012 180);
-  --popover: oklch(0.24 0.032 205);
-  --popover-foreground: oklch(0.96 0.012 180);
-  --primary: oklch(0.72 0.1 185);
-  --primary-foreground: oklch(0.18 0.03 205);
-  --primary-soft: oklch(0.32 0.05 195);
-  --secondary: oklch(0.29 0.035 200);
-  --secondary-foreground: oklch(0.96 0.012 180);
-  --muted: oklch(0.28 0.03 200);
-  --muted-foreground: oklch(0.75 0.02 190);
-  --accent: oklch(0.78 0.1 82);
-  --accent-foreground: oklch(0.2 0.04 60);
-  --sand: oklch(0.3 0.03 80);
-  --border: oklch(1 0 0 / 12%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.72 0.1 185);
+  --background: oklch(0.19 0.032 250);
+  --card: oklch(0.23 0.034 245);
 }
 
 @layer base {
@@ -140,7 +142,12 @@
   h3,
   h4 {
     font-family: var(--font-display);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--accent-foreground);
   }
 }
 
@@ -158,4 +165,45 @@
 
 @utility shadow-float {
   box-shadow: var(--shadow-float);
+}
+
+@utility glow-mint {
+  box-shadow: var(--glow-mint);
+}
+
+@utility text-glow {
+  text-shadow: 0 0 28px oklch(0.79 0.146 168 / 0.55);
+}
+
+/* Cartão bento com borda luminosa */
+@utility bento {
+  position: relative;
+  border-radius: var(--radius-3xl);
+  background: linear-gradient(
+    160deg,
+    oklch(0.98 0.02 165 / 0.07) 0%,
+    oklch(0.98 0.02 165 / 0.02) 100%
+  );
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  transition:
+    transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: oklch(0.79 0.146 168 / 0.45);
+    box-shadow: var(--shadow-float);
+  }
+}
+
+@utility grid-lines {
+  background-image: linear-gradient(
+      to right,
+      oklch(0.98 0.02 165 / 0.05) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, oklch(0.98 0.02 165 / 0.05) 1px, transparent 1px);
+  background-size: 56px 56px;
 }
