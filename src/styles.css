@@ -1,0 +1,236 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system — Sorriso Vivo Odontologia
+ * Direção: "Azul Clínica" — branco limpo, azul institucional e ciano acolhedor.
+ * Tipografia: Syne (display) + Plus Jakarta Sans (texto).
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 8px);
+  --radius-md: calc(var(--radius) - 4px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 6px);
+  --radius-2xl: calc(var(--radius) + 12px);
+  --radius-3xl: calc(var(--radius) + 20px);
+  --radius-4xl: calc(var(--radius) + 32px);
+  --font-display: "Syne", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary-soft: var(--primary-soft);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-sand: var(--sand);
+  --color-whatsapp: var(--whatsapp);
+  --color-whatsapp-foreground: var(--whatsapp-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 1.25rem;
+
+  /* #ffffff */
+  --background: oklch(0.99 0.005 235);
+  --foreground: oklch(0.24 0.08 255);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.24 0.08 255);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.24 0.08 255);
+
+  /* #0757c9 */
+  --primary: oklch(0.48 0.19 255);
+  --primary-foreground: oklch(1 0 0);
+  --primary-soft: oklch(0.92 0.055 235);
+
+  /* #08b9df */
+  --secondary: oklch(0.72 0.14 225);
+  --secondary-foreground: oklch(1 0 0);
+
+  --muted: oklch(0.95 0.018 235);
+  --muted-foreground: oklch(0.48 0.055 250);
+
+  /* #e5f8fc */
+  --accent: oklch(0.95 0.035 225);
+  --accent-foreground: oklch(0.3 0.11 255);
+
+  --sand: oklch(0.96 0.025 235);
+  --whatsapp: oklch(0.68 0.18 155);
+  --whatsapp-foreground: oklch(1 0 0);
+  --destructive: oklch(0.62 0.23 25);
+  --destructive-foreground: oklch(1 0 0);
+  --border: oklch(0.78 0.035 235 / 38%);
+  --input: oklch(0.82 0.03 235 / 55%);
+  --ring: oklch(0.48 0.19 255);
+  --sidebar: oklch(0.98 0.01 235);
+  --sidebar-foreground: oklch(0.24 0.08 255);
+  --sidebar-primary: oklch(0.48 0.19 255);
+  --sidebar-primary-foreground: oklch(1 0 0);
+  --sidebar-accent: oklch(0.92 0.055 235);
+  --sidebar-accent-foreground: oklch(0.3 0.11 255);
+  --sidebar-border: oklch(0.78 0.035 235 / 38%);
+  --sidebar-ring: oklch(0.48 0.19 255);
+
+  --gradient-hero: linear-gradient(
+    135deg,
+    oklch(0.48 0.19 255) 0%,
+    oklch(0.58 0.16 240) 55%,
+    oklch(0.72 0.14 225) 100%
+  );
+  --gradient-soft: radial-gradient(
+      120% 90% at 12% 0%,
+      oklch(0.72 0.14 225 / 0.16) 0%,
+      transparent 60%
+    ),
+    radial-gradient(
+      100% 80% at 95% 10%,
+      oklch(0.48 0.19 255 / 0.08) 0%,
+      transparent 55%
+    ),
+    linear-gradient(180deg, oklch(0.99 0.005 235) 0%, oklch(0.95 0.018 235) 100%);
+  --shadow-card: 0 20px 45px -28px oklch(0.24 0.08 255 / 0.28);
+  --shadow-float: 0 0 0 1px oklch(0.48 0.19 255 / 0.18),
+    0 24px 60px -20px oklch(0.48 0.19 255 / 0.25);
+  --glow-mint: 0 0 40px oklch(0.72 0.14 225 / 0.28);
+}
+
+.dark {
+  --background: oklch(0.22 0.06 255);
+  --card: oklch(0.27 0.07 250);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.03em;
+  }
+
+  ::selection {
+    background: var(--accent);
+    color: var(--accent-foreground);
+  }
+}
+
+@utility bg-gradient-hero {
+  background-image: var(--gradient-hero);
+}
+
+@utility bg-gradient-soft {
+  background-image: var(--gradient-soft);
+}
+
+@utility shadow-card {
+  box-shadow: var(--shadow-card);
+}
+
+@utility shadow-float {
+  box-shadow: var(--shadow-float);
+}
+
+@utility glow-mint {
+  box-shadow: var(--glow-mint);
+}
+
+@utility text-glow {
+  text-shadow: 0 0 28px oklch(0.72 0.14 225 / 0.35);
+}
+
+/* Cartão bento com borda luminosa */
+@utility bento {
+  position: relative;
+  border-radius: var(--radius-3xl);
+  background: linear-gradient(
+    160deg,
+    oklch(1 0 0 / 0.9) 0%,
+    oklch(0.92 0.055 235 / 0.4) 100%
+  );
+  border: 1px solid var(--color-border);
+  overflow: hidden;
+  transition:
+    transform 0.35s cubic-bezier(0.2, 0.8, 0.2, 1),
+    border-color 0.35s ease,
+    box-shadow 0.35s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: oklch(0.48 0.19 255 / 0.45);
+    box-shadow: var(--shadow-float);
+  }
+}
+
+@utility grid-lines {
+  background-image: linear-gradient(
+      to right,
+      oklch(0.48 0.19 255 / 0.07) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, oklch(0.48 0.19 255 / 0.07) 1px, transparent 1px);
+  background-size: 56px 56px;
+}
+
+@layer components {
+  section.bg-gradient-soft span.bg-primary-soft {
+    background-color: #0757c9 !important;
+    color: #ffffff !important;
+  }
+
+  section.bg-gradient-soft a[href="/servicos"] {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+  }
+
+  section.bg-gradient-soft a[href="/servicos"]:hover {
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+  }
+
+  div.bg-gradient-hero a.bg-card {
+    background-color: #0757c9 !important;
+    color: #ffffff !important;
+  }
+
+  div.bg-gradient-hero a.bg-card:hover {
+    background-color: #064aa8 !important;
+    color: #ffffff !important;
+  }
+}
